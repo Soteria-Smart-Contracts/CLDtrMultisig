@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"
+    integrity="sha512-5erpERW8MxcHDF7Xea9eBQPiRtxbse70pFcaHJuOhdEBQeAxGQjUwgJbuBDWve+xP/u5IoJbKjyJk50qCnMD7A=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multisig Dapp</title>
+</head>
+<body style="text-align: center; background-color: aliceblue;">
+    <a style="margin: auto; font-size: xx-large; font-weight: bold;">GM ShibC Admins</a>
+    <br>
+    <a id="LoggedIn" style="font-size: large;">Not Logged in/Not Connected</a>
+    <br>
+    <a id="Signer" style="font-size: large;"></a>
+    <br>
+    <br>
+    <a style="font-size: larger; font-weight: bold;">SignProposal:</a>
+    <br>
+    <br>
+    <input id="SignID" placeholder="Proposal ID" style="font-size: medium; width: max-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <button onclick="SignProposal()">Submit Transaction</button>
+    <br>
+    <br>
+    <a style="font-size: larger; font-weight: bold;">CreateETCProposal:</a>
+    <br>
+    <br>
+    <input id="ETCAMM" placeholder="ETC Amount in decimal" style="font-size: medium; width: max-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <input id="ETCrec" placeholder="Receiving Address" style="font-size: medium; width: fit-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <input id="ETCmemo" placeholder="Memo (Text only)" style="font-size: medium; width: max-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <button onclick="CreateETCProp()">Submit Transaction</button>
+    <br>
+    <a id="NewIDETC" style="font-size: large;"></a>
+    <br>
+    <br>
+    <a style="font-size: larger; font-weight: bold;">CreateShibCProposal:</a>
+    <br>
+    <br>
+    <input id="SHAMM" placeholder="ShibC Amount in decimal" style="font-size: medium; width: max-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <input id="SHrec" placeholder="Receiving Address" style="font-size: medium; width: fit-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <input id="SHmemo" placeholder="Memo (Text only)" style="font-size: medium; width: max-content; padding: 3px; text-align: center;"></input>
+    <br>
+    <br>
+    <button onclick="CreateShibCProp()">Submit Transaction</button>
+    <br>
+    <a id="NewIDSH" style="font-size: large;"></a>
+
+
+<script src="abi.js"></script>
+<script src="interaction.js"></script>
+</html>
