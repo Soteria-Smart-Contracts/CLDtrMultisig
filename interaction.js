@@ -55,6 +55,7 @@ async function CreateETCProp(){
 
     gas = await contract.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
     ID = await contract.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
+    console.log(ID);
     NewIDETC.innerText = "Your New proposal ID is" + ID;
 }
 
