@@ -54,19 +54,8 @@ async function CreateETCProp(){
     let Memo = document.getElementById('ETCmemo').value;
     console.log(Amount, Receiver, Memo);
 
-    gas = await contract.methods.CreateETCProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
-    ID = await contract.methods.CreateETCProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
-    NewIDETC.innerText = "Your New proposal ID is" + ID;
-}
-
-async function CreateShibCProp(){
-    let Amount = BigInt(web3.utils.toWei(document.getElementById('SHAMM').value));
-    let Receiver = document.getElementById('SHrec').value;
-    let Memo = document.getElementById('SHmemo').value;
-    console.log(Amount, Receiver, Memo);
-
-    gas = await contract.methods.CreateETCProposal(ShibC, Amount, Receiver, Memo).estimateGas({from: account, value: 0});
-    ID = await contract.methods.CreateERC20Proposal(ShibC, Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
+    gas = await contract.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
+    ID = await contract.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
     NewIDETC.innerText = "Your New proposal ID is" + ID;
 }
 
