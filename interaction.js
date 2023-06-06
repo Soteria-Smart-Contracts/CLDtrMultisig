@@ -2,7 +2,7 @@ let account;
 const TreasuryABI = window.Treasury;
 const SupplyABI = window.Supply;
 let netID;
-const contractAddress = "0x86a60D59C81461E1187eACAb011302Fa45e91C6c";
+const TreasuryAddress = "0x86a60D59C81461E1187eACAb011302Fa45e91C6c";
 let LoggedIn = false;
 
 loginWithEth();
@@ -67,9 +67,9 @@ async function SignProposal(){
 }
 
 async function IsSigner(){
-    let One = await contract.methods.SignerOne().call();
-    let Two = await contract.methods.SignerTwo().call();
-    let Three = await contract.methods.SignerThree().call();
+    let One = await Treasury.methods.SignerOne().call();
+    let Two = await Treasury.methods.SignerTwo().call();
+    let Three = await Treasury.methods.SignerThree().call();
 
     if(account === One || account === Two || account === Three || account === Four){
         return(true);
