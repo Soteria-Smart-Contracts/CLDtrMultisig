@@ -3,7 +3,7 @@ const TreasuryABI = window.Treasury;
 const SupplyABI = window.Supply;
 let netID;
 const TreasuryAddress = "0x86a60D59C81461E1187eACAb011302Fa45e91C6c";
-const SupplyAddress = "0x86a60D59C81461E1187eACAb011302Fa45e91C6c";
+const SupplyAddress = "0xA9bD833225FA0c46ed76dF5A7AC89065213eA057";
 let LoggedIn = false;
 
 loginWithEth();
