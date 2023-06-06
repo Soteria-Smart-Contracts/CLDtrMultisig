@@ -91,7 +91,7 @@ async function IsSigner(){
     let Two = await Treasury.methods.SignerTwo().call();
     let Three = await Treasury.methods.SignerThree().call();
 
-    if(account === One || account === Two || account === Three || account === Four){
+    if(account === One || account === Two || account === Three){
         return(true);
     }
 }
