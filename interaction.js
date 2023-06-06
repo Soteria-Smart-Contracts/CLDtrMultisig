@@ -70,8 +70,8 @@ async function SignProposal(){
 
 async function SignProposalSupply(){
     let ID = document.getElementById('SignIDS').value;
-    gas = await Treasury.methods.SignProposal(ID).estimateGas({from: account, value: 0});
-    ID = await Treasury.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
+    gas = await Supply.methods.SignProposal(ID).estimateGas({from: account, value: 0});
+    ID = await Supply.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
 }
 
 async function CreateCLDProp(){
