@@ -1,5 +1,6 @@
 let account;
 const TreasuryABI = window.Treasury;
+const 
 let netID;
 const contractAddress = "0x86a60D59C81461E1187eACAb011302Fa45e91C6c";
 let LoggedIn = false;
