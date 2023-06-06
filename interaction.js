@@ -68,6 +68,12 @@ async function SignProposal(){
     ID = await Treasury.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
 }
 
+async function SignProposalSupply(){
+    let ID = document.getElementById('SignID').value;
+    gas = await Treasury.methods.SignProposal(ID).estimateGas({from: account, value: 0});
+    ID = await Treasury.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
+}
+
 async function IsSigner(){
     let One = await Treasury.methods.SignerOne().call();
     let Two = await Treasury.methods.SignerTwo().call();
