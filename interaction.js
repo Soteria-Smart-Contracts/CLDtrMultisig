@@ -74,7 +74,7 @@ async function SignProposalSupply(){
     ID = await Treasury.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
 }
 
-async function CreateETC(){
+async function CreateCLDProp(){
     let Amount = BigInt(web3.utils.toWei(document.getElementById('ETCAMM').value));
     let Receiver = document.getElementById('ETCrec').value;
     let Memo = document.getElementById('ETCmemo').value;
