@@ -58,7 +58,7 @@ async function CreateETCProp(){
 
     gas = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
     TX = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
-    console.log(ID);
+    console.log(TX);
     NewIDETC.innerText = "Your New proposal ID is" + ID;
 }
 
