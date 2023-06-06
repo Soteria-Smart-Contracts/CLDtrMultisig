@@ -82,7 +82,7 @@ async function CreateCLDProp(){
 
     gas = await Supply.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
     TX = await Supply.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
-    console.log(ID);
+    console.log(TX);
     NewIDCLD.innerText = "Your New proposal ID is" + ID;
 }
 
