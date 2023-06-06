@@ -80,8 +80,8 @@ async function CreateCLDProp(){
     let Memo = document.getElementById('CLDmemo').value;
     console.log(Amount, Receiver, Memo);
 
-    gas = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
-    ID = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
+    gas = await Supply.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
+    ID = await Supply.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
     console.log(ID);
     NewIDETC.innerText = "Your New proposal ID is" + ID;
 }
