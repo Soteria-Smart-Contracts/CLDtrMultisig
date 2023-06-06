@@ -74,6 +74,18 @@ async function SignProposalSupply(){
     ID = await Treasury.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
 }
 
+async function CreateETC(){
+    let Amount = BigInt(web3.utils.toWei(document.getElementById('ETCAMM').value));
+    let Receiver = document.getElementById('ETCrec').value;
+    let Memo = document.getElementById('ETCmemo').value;
+    console.log(Amount, Receiver, Memo);
+
+    gas = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
+    ID = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
+    console.log(ID);
+    NewIDETC.innerText = "Your New proposal ID is" + ID;
+}
+
 async function IsSigner(){
     let One = await Treasury.methods.SignerOne().call();
     let Two = await Treasury.methods.SignerTwo().call();
