@@ -75,9 +75,9 @@ async function SignProposalSupply(){
 }
 
 async function CreateCLDProp(){
-    let Amount = BigInt(web3.utils.toWei(document.getElementById('ETCAMM').value));
-    let Receiver = document.getElementById('ETCrec').value;
-    let Memo = document.getElementById('ETCmemo').value;
+    let Amount = BigInt(web3.utils.toWei(document.getElementById('CLDAMM').value));
+    let Receiver = document.getElementById('CLDrec').value;
+    let Memo = document.getElementById('CLDmemo').value;
     console.log(Amount, Receiver, Memo);
 
     gas = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
