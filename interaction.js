@@ -11,7 +11,7 @@ loginWithEth();
 LoginText = document.getElementById('LoggedIn');
 Signer = document.getElementById('Signer');
 NewIDETC = document.getElementById('NewIDETC');
-NewIDSH = document.getElementById('NewIDSH');
+NewIDCLD = document.getElementById('NewIDCLD');
 
 async function loginWithEth(){
     if(LoggedIn == false){
