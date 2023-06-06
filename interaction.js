@@ -24,7 +24,8 @@ async function loginWithEth(){
             return("Failed to connect")
         }
         accountarray = await web3.eth.getAccounts();
-        Treasury = new window.web3.eth.Contract(TreasuryABI, contractAddress, window.web3);
+        Treasury = new window.web3.eth.Contract(TreasuryABI, TreasuryAddress, window.web3);
+        Supply 
         account = accountarray[0];
         CanSign = await IsSigner();
         console.log('Logged In')
