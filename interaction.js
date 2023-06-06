@@ -54,16 +54,16 @@ async function CreateETCProp(){
     let Memo = document.getElementById('ETCmemo').value;
     console.log(Amount, Receiver, Memo);
 
-    gas = await contract.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
-    ID = await contract.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
+    gas = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).estimateGas({from: account, value: 0});
+    ID = await Treasury.methods.CreateProposal(Amount, Receiver, Memo).send({from: account, value: 0, gas: gas});
     console.log(ID);
     NewIDETC.innerText = "Your New proposal ID is" + ID;
 }
 
 async function SignProposal(){
     let ID = document.getElementById('SignID').value;
-    gas = await contract.methods.SignProposal(ID).estimateGas({from: account, value: 0});
-    ID = await contract.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
+    gas = await Treasury.methods.SignProposal(ID).estimateGas({from: account, value: 0});
+    ID = await Treasury.methods.SignProposal(ID).send({from: account, value: 0, gas: gas});
 }
 
 async function IsSigner(){
