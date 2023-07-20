@@ -3,9 +3,10 @@ pragma solidity ^0.8.19;
 
 contract VLNDReceiverMinter{
     address constant Handler = 0x0E3239277501d215e17a4d31c487F86a425E110B;
+    ERC20 VLND;
 
     constructor() {
-        ERC20(0x5d684ADaf3FcFe9CFb5ceDe3abf02F0Cdd1012E3).approve(Handler, type(uint256).max);
+        
     }
 
     event ReceivedAndMinted(address indexed User, uint256 amount, uint32 OriginChain);
