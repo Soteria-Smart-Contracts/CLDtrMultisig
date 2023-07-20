@@ -16,7 +16,7 @@ contract VLNDReceiverMinter{
         TX memory tx = abi.decode(_body, (TX));
         payable(tx.Sender).transfer(tx.Payout);
 
-        emit ReceivedAndMinted(add, tx.Payout, _origin);
+        emit ReceivedAndMinted(bytes32ToAddress(_buf);, tx.Payout, _origin);
     }
 
     //Pure functions
