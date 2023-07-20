@@ -18,7 +18,7 @@ contract VLNDReceiverMinter{
     
     function handle(uint32 _origin, bytes32 _sender, bytes calldata _body ) external {
         TX memory Info = abi.decode(_body, (TX));
-        payable(Info.Sender).transfer(Info.Payout);
+        VLND.Mint(Info.Sender, Info.Payout);
 
         emit ReceivedAndMinted(bytes32ToAddress(_sender), Info.Payout, _origin);
     }
