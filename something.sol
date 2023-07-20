@@ -14,9 +14,9 @@ contract VLNDReceiverMinter{
     //abi.decode(data, (BridgeRequest))
     function handle(uint32 _origin, bytes32 _sender, bytes calldata _body ) external {
         TX memory TX = abi.decode(_body, (TX));
-        payable(tx.Sender).transfer(TX.Payout);
+        payable(TX.Sender).transfer(TX.Payout);
 
-        emit ReceivedAndMinted(bytes32ToAddress(_sender), tx.Payout, _origin);
+        emit ReceivedAndMinted(bytes32ToAddress(_sender), TX.Payout, _origin);
     }
 
     //Pure functions
