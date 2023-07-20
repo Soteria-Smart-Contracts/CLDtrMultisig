@@ -4,7 +4,7 @@ pragma solidity ^0.8.19;
 contract VLNDReceiverMinter{
     address constant Handler = 0x0E3239277501d215e17a4d31c487F86a425E110B;
 
-    event ReceivedAndMinted(address indexed _from, uint256 _amount);
+    event ReceivedAndMinted(address indexed User, uint256 amount, );
 
     struct TX{
         address Sender;
