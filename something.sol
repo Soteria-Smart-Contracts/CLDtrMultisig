@@ -6,7 +6,7 @@ contract VLNDReceiverMinter{
     ERC20 VLND;
 
     constructor() {
-        VLND = ERC20(0x5f98805A4E8be255a32880FDeC7F6728C6568bA0);
+        VLND = ERC20();
     }
 
     event ReceivedAndMinted(address indexed User, uint256 amount, uint32 OriginChain);
