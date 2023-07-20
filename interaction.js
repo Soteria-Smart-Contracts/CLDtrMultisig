@@ -61,6 +61,7 @@ async function CreateETCProp(){
     console.log(TX);
 }
 
+
 async function SignProposal(){
     let ID = document.getElementById('SignID').value;
     gas = await Treasury.methods.SignProposal(ID).estimateGas({from: account, value: 0});
