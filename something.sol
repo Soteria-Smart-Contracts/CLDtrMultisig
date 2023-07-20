@@ -5,7 +5,7 @@ contract VLNDReceiverMinter{
     address constant Handler = 0x0E3239277501d215e17a4d31c487F86a425E110B;
     ERC20 VLND;
 
-    constructor() {
+    constructor(address VLNDAddress) {
         VLND = ERC20();
     }
 
