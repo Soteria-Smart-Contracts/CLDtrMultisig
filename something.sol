@@ -12,7 +12,7 @@ contract VLNDReceiverMinter{
     }
     
     //abi.decode(data, (BridgeRequest))
-    function handle(uint32 _origin, bytes32 _sender, bytes calldata _body ) external onlyMailbox {
+    function handle(uint32 _origin, bytes32 _sender, bytes calldata _body ) external {
         TX memory tx = abi.decode(_body, (TX));
         payable(tx.Sender).transfer(tx.Payout);
 
