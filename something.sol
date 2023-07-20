@@ -15,6 +15,8 @@ contract VLNDReceiverMinter{
     function handle(uint32 _origin, bytes32 _sender, bytes calldata _body ) external onlyMailbox {
         TX memory tx = abi.decode(_body, (TX));
         payable(tx.Sender).transfer(tx.Payout);
+
+        emit ReceivedAndMinted(tx.Sender, tx.Payout, _origin);
     };
 
 }
